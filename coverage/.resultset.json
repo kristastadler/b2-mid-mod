@@ -209,6 +209,10 @@
           null,
           null,
           1,
+          1,
+          null,
+          null,
+          1,
           null,
           null,
           1,
@@ -283,19 +287,21 @@
           null,
           1,
           null,
-          0,
-          0,
+          1,
+          1,
           null,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
+          1,
           null,
+          1,
           null,
-          null,
-          null,
-          null,
+          1,
+          1,
           null,
           null
         ]
@@ -465,10 +471,28 @@
           2,
           null,
           null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/kristastadler/turing/2module/challenges/b2-mid-mod/app/controllers/mechanic_rides_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1585934552
+    "timestamp": 1585936710
   }
 }

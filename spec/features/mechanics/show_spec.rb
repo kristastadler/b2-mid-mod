@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "As a visitor, when I visit a mechanics show page" do
-  it "I see their name, years of experience, and names of all rides they're working on" do
+  it "I see their name, years of experience, and names of all rides they're working on and can add a ride to their workload" do
 
     kings_island = AmusementPark.create(name: "Kings Island",
                                         admission_price: "$60.00")
@@ -16,9 +16,9 @@ RSpec.describe "As a visitor, when I visit a mechanics show page" do
                                       thrill_rating: 4)
     bob = Mechanic.create(name: "Bob Jones",
                           years_of_experience: 8)
-    beast = MechanicRide.create(mechanic_id: bob.id,
+    beast_ride = MechanicRide.create(mechanic_id: bob.id,
                                 ride_id: beast.id)
-    racer = MechanicRide.create(mechanic_id: bob.id,
+    racer_ride = MechanicRide.create(mechanic_id: bob.id,
                                 ride_id: racer.id)
 
 
@@ -31,11 +31,13 @@ RSpec.describe "As a visitor, when I visit a mechanics show page" do
     expect(page).to have_content(beast.name)
     expect(page).to have_content(racer.name)
     expect(page).to_not have_content(viper.name)
-  end
-end
+    expect(page).to have_content("Add a ride to workload:")
 
-                        
-#
-# Add a ride to workload:
-#  _pretent_this_is_a_textfield_
-#                        Submit
+    fill_in :ride_id, with: viper.id
+
+    click_on "Submit"
+
+    expect(current_path).to eq("/mechanics/#{bob.id}")
+    expect(page).to have_content(viper.name)
+  end 
+  end
