@@ -7,4 +7,9 @@ class Ride < ApplicationRecord
     Ride.order(:name)
   end
 
+  def self.average_thrill_rating
+  average_thrill_rating = Ride.sum(:thrill_rating).to_f / Ride.count(:thrill_rating)
+  average_thrill_rating.round(1)
+  end
+
 end
