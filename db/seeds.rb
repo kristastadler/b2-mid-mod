@@ -11,3 +11,6 @@ bob = Mechanic.create(name: "Bob Jones",
 
 jill = Mechanic.create(name: "Jill Adams",
                       years_of_experience: 15)
+
+kings_island = AmusementPark.create(name: "Kings Island",
+                                    admission_price: "$60.00")
